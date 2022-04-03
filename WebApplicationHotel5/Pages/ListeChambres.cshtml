@@ -1,0 +1,35 @@
+﻿@page
+@model WebApplicationHotel5.Pages.ListeChambresModel
+@{
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <a asp-page="/Index">Retour à l'accueil</a>
+    <h1>Liste des chambres</h1>
+
+    <div>
+        
+        <table>
+            <tr>
+                <th>Numéro de la chambre</th>
+                <th> Nom de la chambre </th>
+                <th> Prix (en $)</th>
+            </tr>
+
+            @foreach (var item in Model.Getchambres)
+            {
+                <tr>
+                    <td > @item.ChambreID</td>
+                    <td> @item.NomChambre</td>
+                    <td> @item.Prix</td>
+                </tr>
+             }               
+
+            </table>
+    </div>
+</body>
+</html>

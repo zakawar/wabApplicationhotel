@@ -1,0 +1,31 @@
+﻿@page
+@model WebApplicationHotel5.Pages.Admin.Chambre.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ChambreClass</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChambreClass.NomChambre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChambreClass.NomChambre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChambreClass.Prix)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChambreClass.Prix)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ChambreClass.ChambreID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

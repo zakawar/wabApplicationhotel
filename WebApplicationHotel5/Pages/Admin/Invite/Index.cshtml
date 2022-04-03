@@ -1,0 +1,54 @@
+﻿@page
+@model WebApplicationHotel5.Pages.Admin.Invite.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>    
+    <a asp-page="Create">Créer une nouvelle entrée </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InviteClass[0].NomInvite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InviteClass[0].PrenomInvite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InviteClass[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InviteClass[0].ChambreID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.InviteClass) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomInvite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenomInvite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChambreID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.InviteID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.InviteID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.InviteID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

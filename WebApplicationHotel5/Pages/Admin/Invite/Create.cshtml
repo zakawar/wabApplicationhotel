@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplicationHotel5.Pages.Admin.Invite.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>InviteClass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InviteClass.NomInvite" class="control-label"></label>
+                <input asp-for="InviteClass.NomInvite" class="form-control" />
+                <span asp-validation-for="InviteClass.NomInvite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InviteClass.PrenomInvite" class="control-label"></label>
+                <input asp-for="InviteClass.PrenomInvite" class="form-control" />
+                <span asp-validation-for="InviteClass.PrenomInvite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InviteClass.Telephone" class="control-label"></label>
+                <input asp-for="InviteClass.Telephone" class="form-control" />
+                <span asp-validation-for="InviteClass.Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InviteClass.ChambreID" class="control-label"></label>
+                <input asp-for="InviteClass.ChambreID" class="form-control" />
+                <span asp-validation-for="InviteClass.ChambreID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
